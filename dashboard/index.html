@@ -4,36 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>논산 신학부 대시보드</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
   color-scheme: light;
-  --bg:#f4f3ef; --surface:#fcfcfb; --surface-2:#f0efea; --line:#e2e0d8; --line-2:#d3d1c7;
-  --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#85837c;
-  --brand:#1c5cab; --brand-soft:#e3eefb; --brand-ink:#ffffff;
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
-  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --crit:#d03b3b; --neutral:#9a988f;
-  --good-bg:#e5f5e5; --warn-bg:#fff3d6; --crit-bg:#fbe6e6; --neutral-bg:#ecebe6; --info-bg:#e3eefb;
-  --good-ink:#0a6b0a; --warn-ink:#8a5a00; --crit-ink:#a32626; --info-ink:#1c5cab;
-  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 14px rgba(0,0,0,.04);
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    color-scheme: dark;
-    --bg:#121211; --surface:#1a1a19; --surface-2:#232321; --line:#2e2e2b; --line-2:#3a3a36;
-    --ink:#f0efec; --ink-2:#c3c2b7; --ink-3:#8e8d84;
-    --brand:#5598e7; --brand-soft:#1d2a3b; --brand-ink:#0b0b0b;
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
-    --neutral:#77766e;
-    --good-bg:#16301a; --warn-bg:#3a2e12; --crit-bg:#3a1c1c; --neutral-bg:#2a2a27; --info-bg:#1d2a3b;
-    --good-ink:#7fdc7f; --warn-ink:#f7c75a; --crit-ink:#f08f8f; --info-ink:#86b6ef;
-    --shadow:none;
-  }
+  --bg:#f3f6ee; --surface:#ffffff; --surface-2:#f1f6ea; --line:#e4eadb; --line-2:#cdd9c0; --line-strong:#5f9e3a;
+  --ink:#1b2a14; --ink-2:#4a5a40; --ink-3:#8b9883; --head:#1e3a10;
+  --brand:#4a8c26; --brand-soft:#e7f3dc; --brand-ink:#ffffff;
+  --s1:#4a9a22; --s2:#2f62d9; --s3:#16a99a; --s4:#e0a800; --s5:#e2468c; --s6:#5d6b80; --s7:#7a4fd6; --s8:#9a5a12;
+  --good:#4a9a22; --warn:#f08c2e; --serious:#ea7a3e; --crit:#dc4a1c; --neutral:#a6ad9f;
+  --good-bg:#e6f3da; --warn-bg:#fdebd9; --crit-bg:#fde3dc; --neutral-bg:#eef1ea; --info-bg:#e4ecfc;
+  --good-ink:#3e7d1c; --warn-ink:#c25a0c; --crit-ink:#c23a10; --info-ink:#2552c4;
+  --hl:#fdeedf;
+  --radius:18px; --shadow:0 1px 2px rgba(30,58,16,.04),0 8px 24px rgba(30,58,16,.05);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font-family:'Noto Sans KR',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{font-family:'Pretendard Variable',Pretendard,'Noto Sans KR',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
 button,input,select,textarea{font:inherit;color:inherit}
 .app{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:100vh}
 .side{background:var(--surface);border-right:1px solid var(--line);padding:22px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:4px}
@@ -205,6 +192,65 @@ body.tv main{max-width:none;padding:24px 32px}
 body.tv{font-size:15.5px}
 body.tv .stat .v{font-size:40px}
 body.tv .live-big{font-size:30px}
+
+/* ===== 테마: 연녹색·진녹색 ===== */
+body{letter-spacing:-.2px}
+.side{border-right:1px solid var(--line);background:#fbfdf8}
+.logo-mark{background:var(--head);border-radius:12px;font-weight:900}
+.logo b{font-weight:900;color:var(--head);font-size:16px}
+.nav-btn.on{background:var(--brand-soft);color:var(--head);font-weight:800}
+.page-head h1{font-size:28px;font-weight:900;color:var(--head);letter-spacing:-1px}
+.page-head p{color:var(--ink-2)}
+.panel,.stat,.ccard{border:1px solid #edf1e7;box-shadow:var(--shadow);border-radius:var(--radius)}
+.panel h2{font-weight:800;color:var(--head);font-size:16px}
+.stat .k{color:var(--ink-2);font-weight:700}
+.stat .v{color:var(--head);font-weight:900}
+.btn{border-radius:12px;border-color:var(--line-2);font-weight:700}
+.btn.primary{background:var(--brand);border-color:var(--brand)}
+.badge{border-radius:999px;padding:3px 10px;font-weight:800}
+.t th{color:var(--head);font-weight:800;font-size:12.5px;border-bottom:2px solid var(--line-strong);background:#fff}
+.t td{border-bottom:1px solid var(--line)}
+.t tr:hover td{background:#f7fbf2}
+.name-cell{color:var(--head);font-weight:800}
+.t .num{font-weight:700}
+.seg{border-radius:12px;border-color:var(--line-2)}
+.seg button{font-weight:700}
+.seg button.on-R{background:var(--s1)} .seg button.on-M{background:var(--s2)} .seg button.on-A{background:var(--crit)}
+.cell-R{color:var(--s1)} .cell-M{color:var(--s2)} .cell-A{color:var(--crit);background:var(--hl)}
+.chip{border-radius:14px;border-color:var(--line-2);background:#fff}
+.chip b{color:var(--head)}
+.chip.on{background:var(--head);border-color:var(--head)}
+.chip.on b{color:#fff}
+.chip.reg{box-shadow:inset 0 -3px 0 var(--warn)}
+.chip.today{outline-color:var(--brand)}
+.tabs2{background:#e9efe2;border-radius:12px}
+.tabs2 button{font-weight:700}
+.tabs2 button.on{color:var(--head)}
+.rule-box{background:#eef5e6;border:1px solid #dbe8cc;color:var(--ink-2)}
+.rule-box b{color:var(--head)}
+.banner{background:var(--hl);color:var(--warn-ink)}
+.phase{background:#eef5e6;color:var(--head);border-radius:999px}
+.pipe div{background:#f1f6ea;border-radius:10px}
+.pipe div b{color:var(--head);font-weight:900}
+.pipe div.cur{background:var(--head)}
+.pipe div.cur b{color:#fff}
+.progress i{background:var(--brand)}
+.live-big{color:var(--head);font-weight:900}
+.funnel-bar{background:#eef3e7}
+.funnel-bar i{background:var(--brand)}
+.stack{background:#eef3e7}
+.empty b{color:var(--head);font-weight:800}
+.modal{border-radius:22px}
+.modal h3{color:var(--head);font-weight:900}
+.form label{color:var(--head);font-weight:700}
+select.inp,input.inp,textarea.inp{border-color:var(--line-2);border-radius:12px;background:#fff}
+select.inp:focus,input.inp:focus,textarea.inp:focus{outline:2px solid var(--brand-soft);border-color:var(--brand)}
+.chart .val{fill:var(--head);font-weight:800}
+.chart .grid-l{stroke:#e8eee0}
+.ccard h3{color:var(--head);font-weight:900}
+.watch li b{color:var(--head)}
+.bottom-nav button.on{color:var(--head)}
+.dot.ok{background:var(--brand)}
 </style>
 </head>
 <body>
